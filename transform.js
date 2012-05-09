@@ -95,3 +95,9 @@ Transform.prototype.transformPoint = function(px, py) {
   py = x * this.m[1] + y * this.m[3] + this.m[5];
   return [px, py];
 };
+
+Transform.prototype.transformSize = function(sw, sh) {
+  var w = (sw * this.m[0]) + (sh * this.m[2]);
+  var h = (sw * this.m[1]) + (sh * this.m[3]);
+  return [w, h];
+};
